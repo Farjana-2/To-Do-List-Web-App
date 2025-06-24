@@ -1,0 +1,46 @@
+<html>
+<head>
+  <title>To-Do App</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>To-Do List 📋</h1>
+
+    <div class="task-input">
+      <input type="text" id="taskText" placeholder="Enter a task..." />
+
+      <div class="row-inputs">
+        <select id="priority">
+          <option value="">Priority</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <select id="category">
+          <option value="">Category</option>
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="Study">Study</option>
+        </select>
+
+        <input type="datetime-local" id="taskTime" />
+      </div>
+
+      <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <div class="filters">
+      <button onclick="filterTasks('all')" class="filter-btn active">All</button>
+      <button onclick="filterTasks('active')" class="filter-btn">Active</button>
+      <button onclick="filterTasks('completed')" class="filter-btn">Completed</button>
+      <input type="text" id="searchInput" placeholder="Search tasks..." oninput="searchTasks()"/>
+    </div>
+
+    <div id="taskList" class="task-list"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
